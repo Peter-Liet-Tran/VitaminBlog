@@ -9,7 +9,7 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):
+    def save(self, **kwargs):
         super().save() #saves the original form along with whatever else
 
         img = Image.open(self.image.path)

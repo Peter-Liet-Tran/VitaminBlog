@@ -7,8 +7,11 @@
     <div class="media-body">
       <h2>
     <a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2> 
+      <small>
       <a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-      <small class="text-muted">| {{ post.date_posted|date:"F d, Y" }}</small>
+      <span class="text-muted">| {{ post.date_posted|date:"F d, Y" }}</span>
+      </small>
+      <p class="article-content mt-1"><small>{{ post.summary }}</small></p>
     </div>
 </article>
 
