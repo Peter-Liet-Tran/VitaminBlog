@@ -53,12 +53,10 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['title', 'content', 'image']
     
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        post = form.save(commit=False)
-        #post.instance.author = self.request.user
-        post.save()
-        #form.instance.author = self.request.user
-        return super().form_valid(form)
+         form = PostCreatForm(request.POST, request.FILES or None)
+         form.instance.author = self.request.user
+         form.save()
+         return super().form_valid(form)
 
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
