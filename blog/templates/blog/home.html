@@ -1,21 +1,43 @@
 {% extends "blog/base.html" %}
 {% block content %}
-	{% for post in posts%}
 
-<article class="media content-section">
-    <img class="mr-3" src="{{post.image.url}}">
+<!--<div class="card-deck">--!>
+{% for post in posts%}
+
+
+<article style="background:none;" class="media content-section">
     <div class="media-body">
       <h2>
     <a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2> 
-      <small>
+      
       <a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
       <span class="text-muted">| {{ post.date_posted|date:"F d, Y" }}</span>
-      </small>
-      <p class="article-content mt-1"><small>{{ post.summary }}</small></p>
+      
+      <p class="article-content mt-1">{{ post.summary }}...</p>
+      <a class="btn btn-secondary" href="{% url 'post-detail' post.id %}">Read
+      More</a>
     </div>
+<img style="width:200px;height:200px;" class="mr-3 img-thumbnail" src="{{post.image.url}}">
 </article>
 
+<!--
+<div style="display:inline-block;" class="col-lg-4 col-md-5">
+  <div class="card h-100">
+    <a href="{% url 'post-detail' post.id %}"><img class="card-img-top"
+      src="{{post.image.url}}"></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+           </h4>
+           <p class="card-text">{{post.summary}}</p>
+        </div>
+  </div>
+  </div>
+--!>
 	{% endfor %}
+ <!-- </div> --!>
+
+  <div>
   {% if is_paginated %}
     {% if page_obj.has_previous %}
       <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
@@ -35,7 +57,7 @@
       <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
       <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
     {% endif %}
-
+    </div>
 
   {% endif %}
 

@@ -6,8 +6,8 @@ from PIL import Image
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    summary = models.CharField(max_length=100, default='')
+    title = models.CharField(max_length=50)
+    summary = models.CharField(max_length=200, default='')
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -22,9 +22,9 @@ class Post(models.Model):
     def save(self):
         super().save() #saves the original form along with whatever else
 
-        img = Image.open(self.image.path)
+       # img = Image.open(self.image.path)
 
-        if img.height > 110 or img.width > 110:
-            output_size = (110,110)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+       # if img.height > 110 or img.width > 110:
+        #    output_size = (110,110)
+         #   img.thumbnail(output_size)
+          #  img.save(self.image.path)
