@@ -42,7 +42,15 @@ crossorigin="anonymous">
         <div class="navbar-nav">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-          <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id ="profileNavbarDropdown"
+            href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Profile</a>
+          <div class="dropdown-menu" aria-labelledby="profileNavbarDropdown">
+            <a class="dropdown-item" href="{% url 'profile' %}">Edit Profile</a>
+            <a class="dropdown-item" href="{% url 'vitamin-create' %}">My Vitamins</a>
+            </div>
+          </li>
           <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
           {% else %}
           <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
