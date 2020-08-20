@@ -1,0 +1,34 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h1 class="mb-3" >My Vitamins</h1>
+	
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Link</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for vitamin in vitamins %}
+    <tr>
+      <td><a href="{% url 'vitamin-detail' vitamin.id %}">{{ vitamin.title }}</a></td>
+      <td><a href="{{ vitamin.url }}">Buy Here</a></td>
+      <td>{{ vitamin.price }}</td> 
+      <td scope="row"><img style="width:75px;height:75px;" class="img-thumbnail" src="{{ vitamin.image.url }}"></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+      <th>Total</th>
+      <td></td>
+      <td>{{total}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock content %}

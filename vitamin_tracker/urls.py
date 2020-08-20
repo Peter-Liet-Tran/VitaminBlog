@@ -4,7 +4,7 @@ from .views import (
        VitaminDetailView, UserVitaminListView, VitaminCreateView, VitaminUpdateView, VitaminDeleteView)
 
 urlpatterns = [
-    path('user/<str:username>', UserVitaminListView.as_view(),
+    path('user/', UserVitaminListView.as_view(),
         name='user-vitamins'),
     path('vitamin/new/', VitaminCreateView.as_view(), name='vitamin-create'),
     path('vitamin/<int:pk>/update', VitaminUpdateView.as_view(), name='vitamin-update'),

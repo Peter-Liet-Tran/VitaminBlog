@@ -48,8 +48,9 @@ crossorigin="anonymous">
             aria-expanded="false">Profile</a>
           <div class="dropdown-menu" aria-labelledby="profileNavbarDropdown">
             <a class="dropdown-item" href="{% url 'profile' %}">Edit Profile</a>
-            <a class="dropdown-item" href="{% url 'vitamin-create' %}">My Vitamins</a>
-            </div>
+            <a class="dropdown-item" href="{% url 'user-vitamins' %}">My Vitamins</a>
+            <a class="dropdown-item" href="{% url 'vitamin-create' %}">Add Vitamin</a>
+          </div>
           </li>
           <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
           {% else %}

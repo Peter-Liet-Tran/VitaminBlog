@@ -2,26 +2,42 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Vitamin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
         ListView,
         DetailView,
         CreateView,
         UpdateView,
-        DeleteView
+        DeleteView,
         )
+
 
 class UserVitaminListView(ListView):
     model = Vitamin
     template_name = 'vitamin_tracker/user_vitamins.html' # <app>/<model>_<viewtype>.html
-    context_object_name = 'vitamins'
+
+    def get_context_data(self, **kwargs):
+        context = super(ListView, self).get_context_data(**kwargs)
+        user = self.request.user
+        vitamins = Vitamin.objects.filter(author=user)
+        total = 0
+
+        for vita in vitamins:
+            total += vita.price
+
+
+        context['vitamins'] = vitamins
+        context['total'] = total
+
+        return context
 
     def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        user = self.request.user
         return Vitamin.objects.filter(author=user)
 
 class VitaminDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
     model = Vitamin 
-    success_url = '/'
+    success_url = '/user/'
 
     def test_func(self): #Makes sure it is the author updating the post
         vitamin = self.get_object()
