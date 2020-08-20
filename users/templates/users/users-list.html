@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h1 class="mb-3">Users</h1>
+
+<table class="table table-striped">
+  <tbody>
+    {% for profile in profiles %}
+    <tr>
+      <td><img src="{{profile.image.url}}"></td>
+      <td>{{profile.user.username}}</td> 
+      <td><a href={% url 'user-posts' profile.user.username %}>Posts</a></td>
+      <td><a href="{% url 'vitamins-from-user' profile.user.username %}">Vitamins</a></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endblock content %}

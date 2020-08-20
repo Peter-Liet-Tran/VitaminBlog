@@ -1,7 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+from .models import Profile
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.views.generic import (
+        ListView,
+        )
+
 
 def register(request):
     if request.method == 'POST':
@@ -37,3 +43,8 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+class UsersListView(ListView):
+    model = Profile
+    template_name = 'users/users-list.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'profiles'

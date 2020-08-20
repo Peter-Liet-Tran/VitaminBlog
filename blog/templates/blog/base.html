@@ -34,9 +34,10 @@ crossorigin="anonymous">
       </button>
       <div class="collapse navbar-collapse" id="navbarToggle">
         <div class="navbar-nav mr-auto">
-    <!-- <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-      --!>
-	  <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+     <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+    <a class="nav-item nav-link" href="{% url 'userslist' %}">Users</a>
+	  <!--<a class="nav-item nav-link" href="{% url 'blog-about'
+     %}">About</a>--!>
         </div>
         <!-- Navbar Right Side -->
         <div class="navbar-nav">
@@ -49,7 +50,6 @@ crossorigin="anonymous">
           <div class="dropdown-menu" aria-labelledby="profileNavbarDropdown">
             <a class="dropdown-item" href="{% url 'profile' %}">Edit Profile</a>
             <a class="dropdown-item" href="{% url 'user-vitamins' %}">My Vitamins</a>
-            <a class="dropdown-item" href="{% url 'vitamin-create' %}">Add Vitamin</a>
           </div>
           </li>
           <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>

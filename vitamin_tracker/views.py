@@ -11,6 +11,15 @@ from django.views.generic import (
         DeleteView,
         )
 
+class VitaminByUserListView(ListView):
+    model = Vitamin
+    template_name = 'vitamin_tracker/vitamins_from_user.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'vitamins'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Vitamin.objects.filter(author=user)
 
 class UserVitaminListView(ListView):
     model = Vitamin
