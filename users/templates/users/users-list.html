@@ -6,7 +6,11 @@
   <tbody>
     {% for profile in profiles %}
     <tr>
-      <td><img src="{{profile.image.url}}"></td>
+      <td>
+        {% if profile.image %}
+        <img src="{{profile.image.url}}">
+        {% endif %}
+      </td>
       <td>{{profile.user.username}}</td> 
       <td><a href={% url 'user-posts' profile.user.username %}>Posts</a></td>
       <td><a href="{% url 'vitamins-from-user' profile.user.username %}">Vitamins</a></td>
