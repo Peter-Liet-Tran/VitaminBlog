@@ -39,7 +39,7 @@ colorama==0.4.3
 constantly==15.1.0
 crackmapexec==5.0.1.dev0
 crcelk==1.3
-cryptography==2.8
+cryptography==3.2
 cupshelpers==1.0
 cycler==0.10.0
 Cython==0.29.14
