@@ -165,7 +165,7 @@ pefile==2019.4.18
 pexpect==4.6.0
 phonenumbers==8.12.1
 pickleshare==0.7.5
-Pillow==7.2.0
+Pillow==8.1.1
 plaster==1.0
 plaster-pastedeploy==0.5
 plecost==1.1.2
