@@ -10,7 +10,7 @@ APScheduler==0.0.0
 asn1crypto==0.24.0
 async-timeout==3.0.1
 attrs==19.3.0
-autobahn==17.10.1
+autobahn==20.12.3
 Automat==0.8.0
 Babel==2.8.0
 backcall==0.1.0
