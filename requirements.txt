@@ -139,7 +139,7 @@ maxminddb==1.4.1
 mechanize==0.4.5
 mimerender==0.6.0
 mistune==0.8.4
-mitmproxy==4.0.4
+mitmproxy==7.0.3
 msgpack==0.6.2
 multidict==4.7.5
 mysqlclient==1.4.4
