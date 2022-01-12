@@ -53,7 +53,7 @@ distro==1.5.0
 distro-info==0.23
 Django==2.2.12
 django-crispy-forms==1.9.2
-dnslib==0.9.12
+dnslib==0.9.17
 dnspython==1.16.0
 ecdsa==0.15
 email-validator==1.0.3
