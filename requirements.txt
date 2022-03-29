@@ -154,7 +154,7 @@ numpy==1.17.4
 openpyxl==2.4.9
 packaging==20.3
 pandas==0.25.3
-paramiko==2.6.0
+paramiko==2.10.1
 parso==0.6.2
 passlib==1.7.2
 Paste==3.4.0
