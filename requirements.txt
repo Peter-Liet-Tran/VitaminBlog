@@ -150,7 +150,7 @@ networkx==2.4
 nplusone==1.0.0
 ntlm-auth==1.1.0
 numexpr==2.7.1
-numpy==1.17.4
+numpy==1.22.0
 openpyxl==2.4.9
 packaging==20.3
 pandas==0.25.3
