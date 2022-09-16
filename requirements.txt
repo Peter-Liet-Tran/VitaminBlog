@@ -129,7 +129,7 @@ ldapdomaindump==0.9.1
 lightdm-gtk-greeter-settings==1.2.2
 lxml==4.5.0
 lz4==3.0.2+dfsg
-Mako==1.1.2
+Mako==1.2.2
 Markdown==3.2.1
 MarkupSafe==1.1.1
 marshmallow==3.5.1
